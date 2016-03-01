@@ -23,17 +23,24 @@ testing servers using our online scanner, at https://drownattack.com.
 Likewise, it may also have false positives,
 i.e. it may indicate a server is vulnerable when it is in fact not.
 
+Dependencies:
+--------------
+You need the Python `enum` package as well as `scapy`.
+
+On a Debian system: `sudo apt-get install python-enum scapy`
+
 Usage examples:
 ---------------
+```
 python scanner.py localhost 443
-
+...
 python scanner.py localhost 587 -esmtp
-
+...
 python scanner.py localhost 143 -imap
-
+...
 python scanner.py localhost 25 -esmtp
-
+...
 python scanner.py localhost 110 -pop3
-
+...
 python scanner.py localhost 443 -bare
-
+````
