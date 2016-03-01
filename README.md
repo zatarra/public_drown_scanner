@@ -25,9 +25,9 @@ i.e. it may indicate a server is vulnerable when it is in fact not.
 
 Dependencies:
 --------------
-You need the Python `enum` package as well as `scapy`.
+You need the Python `enum`, `scapy`, and `pycrypto` packages.
 
-On a Debian system: `sudo apt-get install python-enum scapy`
+On a Debian system: `sudo apt-get install python-enum scapy python-crypto`
 
 Usage examples:
 ---------------
