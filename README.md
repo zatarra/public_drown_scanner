@@ -29,6 +29,8 @@ You need the Python `enum`, `scapy`, and `pycrypto` packages.
 
 On a Debian system: `sudo apt-get install python-enum scapy python-crypto`
 
+Or with pip: `sudo pip install enum pycrypto scapy pyasn1`
+
 Usage examples:
 ---------------
 ```
