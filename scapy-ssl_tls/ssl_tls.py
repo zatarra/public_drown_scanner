@@ -8,7 +8,7 @@ from scapy.layers.inet import TCP, UDP
 import os, time
 
 try:
-    import ssl_tls_crypto
+    from scapy_ssl_tls import ssl_tls_crypto
 except ImportError, ie:
     print "Import Error - most likely due to missing pycrypto libraries - disabling crypto functionality"
     print repr(ie)

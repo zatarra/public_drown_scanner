@@ -322,7 +322,28 @@ def sslv2_connect(ip, port, protocol, cipher_suite, result_additional_data):
     result_additional_data['cipher_suite_advertised'] = cipher_suite_advertised
     return "%s:%s" % (VULN, base64.b64encode(public_key.exportKey(format='DER')))
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def printRED(msg):
+  print bcolors.FAIL , msg , bcolors.ENDC
+
+def printGREEN(msg):
+  print bcolors.OKGREEN , msg , bcolors.ENDC
+
 if __name__ == '__main__':
+    if len(sys.argv) < 3:
+      print '''Usage: %s <ip> <port> | <service>
+Example: %s google.com 443''' %  (sys.argv[0], sys.argv[0])
+      sys.exit(1)
+
     ip = sys.argv[1]
     port = int(sys.argv[2])
     scan_id = os.getcwd()
@@ -362,6 +383,6 @@ if __name__ == '__main__':
                 else:
                     cve_string += " and CVE-2016-0703"
 
-            print '%s: Server is vulnerable%s, with cipher %s\n' % (ip, cve_string, string_description)
+            printRED('%s: Server is vulnerable%s, with cipher %s\n' % (ip, cve_string, string_description))
         else:
-            print '%s: Server is NOT vulnerable with cipher %s, Message: %s\n' % (ip, string_description, ret)
+            printGREEN('%s: Server is NOT vulnerable with cipher %s, Message: %s\n' % (ip, string_description, ret))
