@@ -23,6 +23,9 @@ testing servers using our online scanner, at https://drownattack.com.
 Likewise, it may also have false positives,
 i.e. it may indicate a server is vulnerable when it is in fact not.
 
+Hubert Kario has also made different scanning scripts available here:
+https://mta.openssl.org/pipermail/openssl-dev/2016-March/005602.html
+
 Dependencies:
 --------------
 You need the Python `enum`, `scapy`, and `pycrypto` packages.
